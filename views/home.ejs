@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cats Avenue</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+             <!--cat section starts-->
+
+             <section class="cat">
+
+                <div class="catHeading">
+                    <h1>Cat Avenue</h1>
+                </div>
+    
+                <div class="catContainer">
+    
+                    <div class="catBox">
+
+                        <% addContent.forEach((element) => { %>
+                            
+                            <% const id = element.reference_image_id; %>
+
+                            <% const imgURL = "https://cdn2.thecatapi.com/images/" + id + ".jpg"; %>
+
+                            <div class="catImg">
+                                <img src="<%= imgURL %>" />
+                            </div>
+                            
+                            <div class="catText">
+                                <h1><%= element.name %></h1>
+                                <p><%= element.description %></p>
+                                <p>Temperament : <%= element.temperament %></p>
+                                <p>Life Span : <%= element.life_span %> years.</p>
+                                <p>Child Friendly Level(1-10) : <%= element.child_friendly %></p>
+                                <p>Affection Level(1-10) : <%= element.affection_level %></p>
+                            </div>
+
+                        <% }); %>
+    
+                    </div>
+    
+                </div>
+               
+            </section>
+    <!--cat section ends-->
+        
+    </body>
+</html>
